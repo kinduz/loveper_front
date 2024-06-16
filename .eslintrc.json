@@ -26,6 +26,7 @@
     ],
     "root": true,
     "rules": {
+        "import/no-extraneous-dependencies": "off",
         "import/no-named-as-default": "off",
         "import/no-unresolved": "off",
         "no-param-reassign": ["error", { "props": false }],
@@ -39,7 +40,6 @@
         ],
         "react/display-name": "off",
         "linebreak-style": 0,
-        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}],
         "max-len": ["error", { "code": 1020 }],
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/no-inferrable-types": "off",

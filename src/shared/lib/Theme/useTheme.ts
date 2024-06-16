@@ -6,6 +6,10 @@ interface UseThemeResult {
   theme: Theme;
 }
 
+export type TThemeProps = {
+  theme: Theme;
+};
+
 export const useTheme = (): UseThemeResult => {
   const { theme, setTheme } = useContext(ThemeContext);
   const toggleTheme = () => {

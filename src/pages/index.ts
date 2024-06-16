@@ -5,3 +5,6 @@ export * from "./AboutPage";
 export * from "./NotFoundPage";
 export * from "./WelcomePage";
 export * from "./MainPage";
+export * from "./KaraokePage";
+export * from "./DictaphonePage";
+export * from "./VocalRemoverPage";

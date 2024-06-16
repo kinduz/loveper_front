@@ -1,23 +1,31 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import { Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import { ILinkProps } from "../lib/Sidebar.links";
+import { LinkLabel } from "./Sidebar.styled";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Tooltip } from "antd";
 
-type TSidebarLinkProps = {
-  icon: ReactNode;
-  label: string;
-};
+interface ISidebarLinkProps extends ILinkProps {
+  isCollapsed: boolean;
+}
 
-const SidebarLink: FC<TSidebarLinkProps> = ({ label, icon }) => {
+const SidebarLink: FC<ISidebarLinkProps> = ({
+  label,
+  icon,
+  path,
+  isCollapsed,
+}) => {
   return (
-    <NavLink to={"/"}>
+    <NavLink to={path}>
       <Stack
         textAlign={"center"}
         direction={"column"}
         alignItems={"center"}
         gap={2}
       >
-        {icon}
-        <span>{label}</span>
+        {isCollapsed ? <Tooltip title={label}>{icon}</Tooltip> : <>{icon}</>}
+        <LinkLabel isCollapsed={isCollapsed}>{label}</LinkLabel>
       </Stack>
     </NavLink>
   );
